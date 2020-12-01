@@ -1,5 +1,5 @@
 import './App.css';
-import "tailwindcss/tailwind.css";
+import "tailwindcss/dist/tailwind.css";
 import MyForm from './component/MyForm';
 
 function App() {

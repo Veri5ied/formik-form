@@ -22,13 +22,13 @@ const validate = (values) => {
   if (!values.password) {
     errors.password = "Password is required";
   } else if (values.password.length <= 10) {
-    errors.password = "Password length is weak";
+    errors.password = "Password length is weak 😩";
   }
 
   if (!values.Vpassword) {
     errors.Vpassword = "Invalid password verification";
   } else if (values.Vpassword !== values.password) {
-    errors.Vpassword = "Passwords don't match";
+    errors.Vpassword = "Passwords don't match 😟";
   }
 
   return errors;

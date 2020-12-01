@@ -3,14 +3,18 @@ const validate = (values) => {
 
   if (!values.firstName) {
     errors.firstName = "First name is required";
-  } else if (values.firstName.length <= 1) {
+  } else if (values.firstName.length < 1) {
     errors.firstName = "Invalid First name";
+  } else {
+    errors.firstName = "Nice first name 😃";
   }
 
   if (!values.lastName) {
     errors.lastName = "Last name is required";
-  } else if (values.lastName.length <= 1) {
+  } else if (values.lastName.length < 1) {
     errors.lastName = "Invalid Last name";
+  } else {
+    errors.lastName = "Awesome last name 😁";
   }
 
   if (!values.email) {
@@ -21,14 +25,18 @@ const validate = (values) => {
 
   if (!values.password) {
     errors.password = "Password is required";
-  } else if (values.password.length <= 10) {
+  } else if (values.password.length <= 6) {
     errors.password = "Password length is weak 😩";
+  } else {
+    errors.password = "Password strength is ok 💪";
   }
 
   if (!values.Vpassword) {
     errors.Vpassword = "Invalid password verification";
   } else if (values.Vpassword !== values.password) {
     errors.Vpassword = "Passwords don't match 😟";
+  } else {
+    errors.Vpassword = "Passwords match 👏";
   }
 
   return errors;

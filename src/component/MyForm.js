@@ -32,9 +32,7 @@ function MyForm() {
             />
             {formik.touched.firstName && formik.errors.firstName ? (
               <div>{formik.errors.firstName}</div>
-            ) : (
-              <div>Nice first name 😃</div>
-            )}
+            ) : null}
 
             <input
               type="text"
@@ -45,9 +43,7 @@ function MyForm() {
             />
             {formik.touched.lastName && formik.errors.lastName ? (
               <div>{formik.errors.lastName}</div>
-            ) : (
-              <div>Awesome last name 😁</div>
-            )}
+            ) : null}
 
             <input
               type="text"
@@ -64,14 +60,12 @@ function MyForm() {
               type="password"
               className="block border border-grey-light w-full p-3 rounded mb-4"
               name="password"
-              placeholder="Password"
+              placeholder="Password (5 characters and above)"
               {...formik.getFieldProps("password")}
             />
             {formik.touched.password && formik.errors.password ? (
               <div>{formik.errors.password}</div>
-            ) : (
-              <div>Password strength is ok 💪</div>
-            )}
+            ) : null}
 
             <input
               type="password"
@@ -82,9 +76,7 @@ function MyForm() {
             />
             {formik.touched.Vpassword && formik.errors.Vpassword ? (
               <div>{formik.errors.Vpassword}</div>
-            ) : (
-              <div>Passwords match 👏</div>
-            )}
+            ) : null}
 
             <button
               type="submit"

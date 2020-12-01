@@ -1,11 +1,11 @@
 import './App.css';
 import "tailwindcss/tailwind.css";
-import Form from './component/Form';
+import MyForm from './component/MyForm';
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <MyForm />
     </div>
   );
 }

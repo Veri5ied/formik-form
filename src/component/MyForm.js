@@ -3,7 +3,7 @@ import React from "react";
 import validate from "../auth/validate";
 import { useFormik } from "formik";
 
-function Form() {
+function MyForm() {
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -18,7 +18,7 @@ function Form() {
     },
   });
   return (
-    <Form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit}>
       <div className="bg-grey-lighter min-h-screen flex flex-col">
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
@@ -30,6 +30,11 @@ function Form() {
               placeholder="First Name"
               {...formik.getFieldProps("firstName")}
             />
+            {formik.touched.firstName && formik.errors.firstName ? (
+              <div>{formik.errors.firstName}</div>
+            ) : (
+              <div>Nice first name</div>
+            )}
 
             <input
               type="text"
@@ -38,6 +43,11 @@ function Form() {
               placeholder="Last Name"
               {...formik.getFieldProps("lastName")}
             />
+            {formik.touched.lastName && formik.errors.lastName ? (
+              <div>{formik.errors.lastName}</div>
+            ) : (
+              <div>Awesome last name</div>
+            )}
 
             <input
               type="text"
@@ -46,6 +56,9 @@ function Form() {
               placeholder="Email"
               {...formik.getFieldProps("email")}
             />
+            {formik.touched.email && formik.errors.email ? (
+              <div>{formik.errors.email}</div>
+            ) : null}
 
             <input
               type="password"
@@ -54,6 +67,12 @@ function Form() {
               placeholder="Password"
               {...formik.getFieldProps("password")}
             />
+            {formik.touched.password && formik.errors.password ? (
+              <div>{formik.errors.password}</div>
+            ) : (
+              <div>Password strength is ok</div>
+            )}
+
             <input
               type="password"
               className="block border border-grey-light w-full p-3 rounded mb-4"
@@ -61,6 +80,11 @@ function Form() {
               placeholder="Confirm Password"
               {...formik.getFieldProps("Vpassword")}
             />
+            {formik.touched.Vpassword && formik.errors.Vpassword ? (
+              <div>{formik.errors.Vpassword}</div>
+            ) : (
+              <div>Passwords match</div>
+            )}
 
             <button
               type="submit"
@@ -99,8 +123,8 @@ function Form() {
           </div>
         </div>
       </div>
-    </Form>
+    </form>
   );
 }
 
-export default Form;
+export default MyForm;

@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import "tailwindcss/tailwind.css";
 
 function App() {
   return (
